@@ -1,0 +1,498 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法 | 我是电商产品经理</title><meta name="keywords" content="hexo,github,建站,主题,博客"><meta name="author" content="gejianya,gejianya@139.com"><meta name="copyright" content="gejianya"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法 Hexo + 阿里云 &amp; GitHub 搭建个人博客本地部署 GitHub 部署阿里云部署准备工作安装必要的软件 Node.jshttps:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F; Windows：通过 nvs（推荐）或者 nvm 安装。  准备工作安装必要的软件 Node.jshttps:&#x2F;&#x2F;n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法">
+<meta property="og:url" content="https://gejianya.github.io/post/d95d7e09.html">
+<meta property="og:site_name" content="我是电商产品经理">
+<meta property="og:description" content="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法 Hexo + 阿里云 &amp; GitHub 搭建个人博客本地部署 GitHub 部署阿里云部署准备工作安装必要的软件 Node.jshttps:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F; Windows：通过 nvs（推荐）或者 nvm 安装。  准备工作安装必要的软件 Node.jshttps:&#x2F;&#x2F;n">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-16_02-39-52.png">
+<meta property="article:published_time" content="2022-10-15T16:26:59.000Z">
+<meta property="article:modified_time" content="2022-10-15T18:59:06.142Z">
+<meta property="article:author" content="gejianya">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="建站">
+<meta property="article:tag" content="主题">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-16_02-39-52.png"><link rel="shortcut icon" href="/img/tubiao.png"><link rel="canonical" href="https://gejianya.github.io/post/d95d7e09"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo + 阿里云 & GitHub 搭建个人博客 | Mac和Windows系统安装方法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-16 02:59:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-archive"></i><span> 电商设计</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book"></i><span> 电商前台</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电商后台</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-16_02-39-52.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">我是电商产品经理</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-archive"></i><span> 电商设计</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book"></i><span> 电商前台</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电商后台</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-15T16:26:59.000Z" title="发表于 2022-10-16 00:26:59">2022-10-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-15T18:59:06.142Z" title="更新于 2022-10-16 02:59:06">2022-10-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Hexo-阿里云-amp-GitHub-搭建个人博客-Mac和Windows系统安装方法"><a href="#Hexo-阿里云-amp-GitHub-搭建个人博客-Mac和Windows系统安装方法" class="headerlink" title="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法"></a>Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法</h1><blockquote>
+<p>Hexo + 阿里云 &amp; GitHub 搭建个人博客本地部署 GitHub 部署阿里云部署准备工作安装必要的软件 Node.js<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a> Windows：通过 nvs（推荐）或者 nvm 安装。</p>
+</blockquote>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>安装必要的软件</p>
+<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a> （直接点击本链接就有Mac版）</p>
+<ul>
+<li>Windows：通过 <a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/">nvs</a>（推荐）或者 <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a> 安装。</li>
+<li>Mac：使用 <a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a> 或 <a target="_blank" rel="noopener" href="http://www.macports.org/">MacPorts</a> 安装。</li>
+<li>Linux（DEB&#x2F;RPM-based）：从 <a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions">NodeSource</a> 安装。</li>
+<li>其它：使用相应的软件包管理器进行安装，可以参考由 Node.js 提供的 <a target="_blank" rel="noopener" href="https://nodejs.org/en/download/package-manager/">指导</a>。</li>
+</ul>
+<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p><a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a></p>
+<ul>
+<li>Windows：下载并安装 <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">git</a>.</li>
+<li>Mac：使用 <a target="_blank" rel="noopener" href="http://mxcl.github.com/homebrew/">Homebrew</a>, <a target="_blank" rel="noopener" href="http://www.macports.org/">MacPorts</a> 或者**下载 <a target="_blank" rel="noopener" href="http://sourceforge.net/projects/git-osx-installer/">安装程序</a>**。</li>
+<li>Linux (Ubuntu, Debian)：<code>sudo apt-get install git-core</code></li>
+<li>Linux (Fedora, Red Hat, CentOS)：<code>sudo yum install git-core</code></li>
+</ul>
+<h3 id="Mac系统安装homebrew"><a href="#Mac系统安装homebrew" class="headerlink" title="Mac系统安装homebrew"></a>Mac系统安装homebrew</h3><blockquote>
+<p>mac 安装 homeBrew 时报错，显示：curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection refused 搜索百度一种是通过污染 DNS 方法，使用 switchhosts 修改 host ，但还是安装不成功；使用以下方法，亲测成功。</p>
+</blockquote>
+<p>mac 安装 homeBrew 时报错，显示：curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection refused</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/503481a9-4abb-4afb-aca8-76f307773107-20221015235151499-20221015235336291.jpeg" alt="Hexo%20+%20%E9%98%BF%E9%87%8C%E4%BA%91%20&amp;%20GitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%20dd189847cf2746a598db81742168d078/503481a9-4abb-4afb-aca8-76f307773107.jpeg"></p>
+<p>搜索百度一种是通过污染 DNS 方法，使用 switchhosts 修改 host ，但还是安装不成功；</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/ee7d85a5-3c4e-43dd-9c8e-414b984f2836-20221015235301937-20221015235346772.jpeg" alt="Hexo%20+%20%E9%98%BF%E9%87%8C%E4%BA%91%20&amp;%20GitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%20dd189847cf2746a598db81742168d078/ee7d85a5-3c4e-43dd-9c8e-414b984f2836.jpeg"></p>
+<p>使用以下方法，亲测成功。</p>
+<p>在知乎上找到这样的一个网址：已经替换为国内的网址可以正常安全访问下载。**<code>/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</code>**</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/15f46a14-29c6-492e-830b-d2752bf9dfb1-20221015235359978.jpeg" alt="Hexo%20+%20%E9%98%BF%E9%87%8C%E4%BA%91%20&amp;%20GitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%20dd189847cf2746a598db81742168d078/15f46a14-29c6-492e-830b-d2752bf9dfb1.jpeg"></p>
+<p>选择 “1” 中科大下载源</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/89ca0c7f-40fa-46dd-b487-4a08f1b132f3-20221015235409039.jpeg" alt="Hexo%20+%20%E9%98%BF%E9%87%8C%E4%BA%91%20&amp;%20GitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%20dd189847cf2746a598db81742168d078/89ca0c7f-40fa-46dd-b487-4a08f1b132f3.jpeg"></p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/e60090b4-1c5b-43f3-bfdf-ca7428953573.jpeg" alt="Hexo%20+%20%E9%98%BF%E9%87%8C%E4%BA%91%20&amp;%20GitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%20dd189847cf2746a598db81742168d078/e60090b4-1c5b-43f3-bfdf-ca7428953573.jpeg"></p>
+<p>成功了。</p>
+<h3 id="通过homebrew安装Git"><a href="#通过homebrew安装Git" class="headerlink" title="通过homebrew安装Git"></a><strong>通过homebrew安装Git</strong></h3><p>终端输入：brew install git </p>
+<h3 id="卸载Git（Git安装错误或版本太低，需要卸载的情况）"><a href="#卸载Git（Git安装错误或版本太低，需要卸载的情况）" class="headerlink" title="卸载Git（Git安装错误或版本太低，需要卸载的情况）"></a><strong>卸载Git（Git安装错误或版本太低，需要卸载的情况）</strong></h3><ul>
+<li>查看Git安装位置，使用命令 <code>which －a git</code></li>
+<li>终端运行 <code>sh /usr/local/git/uninstall.sh</code> 卸载</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">which -a git</span><br><span class="line"></span><br><span class="line">cd /usr/local</span><br><span class="line"></span><br><span class="line">cd git</span><br><span class="line"></span><br><span class="line">sh uninstall.sh</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>官方网址: <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
+<ol>
+<li>首先需要建立博客文件夹，建议建在非系统盘，例如 <code>~E:/Blog/</code>，那么这个目录就是我们博客的根目录了。<br>因为每个人的命名习惯不同，本帖之后会以 [Blogroot] 指代博客根目录。Mac系统直接在文稿内新建一个Blog空文件夹即可。</li>
+<li>使用 npm 安装 Hexo, 在 [Blogroot] 路径下右键 -&gt;Git Bash Here, 输入（Mac系统直接打开终端依次输入以下命令：）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">#获取管理员权限</span><br><span class="line"></span><br><span class="line">cd /Users/gejianya/Desktop/Blog</span><br><span class="line"></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"># hexo-cli 是 hexo的指令集。</span><br><span class="line"></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>初始化 Hexo 博客：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/gejianya/Desktop/Blog</span><br><span class="line">#切换到Blog文件夹内</span><br><span class="line">hexo init</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-13_16-43-21.png" alt="Xnip2022-10-13_16-43-21.png"></p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-13_16-45-02-20221015235513295.png" alt="Xnip2022-10-13_16-45-02.png"></p>
+<p>然后在浏览器中打开 <a target="_blank" rel="noopener" href="http://localhost:4000/">localhost:4000</a> , 就能看到</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/eb097e8b-c5ec-4399-927d-15b7a9be216b-20221015235526482.png" alt="Hexo%20+%20%E9%98%BF%E9%87%8C%E4%BA%91%20&amp;%20GitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%20dd189847cf2746a598db81742168d078/eb097e8b-c5ec-4399-927d-15b7a9be216b.png"></p>
+<p>前面的步骤与本地部署一致</p>
+<h2 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h2><h3 id="注册-github"><a href="#注册-github" class="headerlink" title="注册 github"></a>注册 github</h3><p>首先注册 github 账号:<a target="_blank" rel="noopener" href="https://github.com/">github</a>，用户名记着下面需要用</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-13_16-49-24.png" alt="Xnip2022-10-13_16-49-24.png"></p>
+<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p>新建 username.github.io 仓库:</p>
+<p>注册成功后，在 github 首页单击头像 -&gt;Your repositories<br>在自己的 GitHub 账号下创建一个新的仓库，命名为 username.github.io（username 是你的用户名)。</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-13_16-52-23-20221015235603906.png" alt="Xnip2022-10-13_16-52-23.png"></p>
+<h3 id="配置-Git-与-GitHub"><a href="#配置-Git-与-GitHub" class="headerlink" title="配置 Git 与 GitHub:"></a>配置 Git 与 GitHub:</h3><p>此处为全局配置，所以可以在任意位置打开 git bash, 设置用户名称和邮件地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;gejianya&quot;</span><br><span class="line">git config --global user.email &quot;gjywin@163.com&quot;</span><br><span class="line">#此处填写你GitHub账户的用户名和跟账户绑定的邮箱，别填写其他邮箱</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地获取公钥"><a href="#本地获取公钥" class="headerlink" title="本地获取公钥"></a>本地获取公钥</h3><p>首先查看本机的公钥：</p>
+<ul>
+<li>Linux 系统：~&#x2F;.ssh</li>
+<li>Windows 10 ：C:&#x2F;Users&#x2F;ASUS&#x2F;.ssh</li>
+</ul>
+<p>我的电脑是 Windows 10 :</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat C:/Users/Administrator/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>将结果复制保存</p>
+<p><strong>Mac系统获取本机公钥</strong></p>
+<ol>
+<li><p>首先用 ssh -vT <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;">&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;</a> 测试一下，会去你用户目录下面找公钥文件, 有打印出下面的信息,这说明&#x2F;User&#x2F;用户名&#x2F;.ssh&#x2F; 下面去寻找公钥文件，当前用户目录下面的确没有公钥文件。</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-13_23-02-07-20221015235638183.png" alt="Xnip2022-10-13_23-02-07.png"></p>
+</li>
+<li><p>执行: cd &#x2F;Users&#x2F;用户名&#x2F;.ssh&#x2F;     如：cd &#x2F;Users&#x2F;gejianya&#x2F;.ssh&#x2F;</p>
+</li>
+<li><p>执行: ssh-keygen -t rsa -b 4096 -C “Git 上关联的email”    如：ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#103;&#106;&#x79;&#x77;&#x69;&#x6e;&#x40;&#49;&#54;&#x33;&#46;&#99;&#111;&#x6d;">&#103;&#106;&#x79;&#x77;&#x69;&#x6e;&#x40;&#49;&#54;&#x33;&#46;&#99;&#111;&#x6d;</a>”</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-13_23-04-50-20221015235645631.png" alt="Xnip2022-10-13_23-04-50.png"></p>
+</li>
+</ol>
+<p>点击回车</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-13_23-05-52-20221015235700756.png" alt="Xnip2022-10-13_23-05-52.png"></p>
+<p>输入y</p>
+<p>生成id_rsa.pub 文件后, 执行以下命令：vi id_rsa.pub </p>
+<p>自动打开文件, 复制文件内容（SSH keys）到<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=GitHub&spm=1001.2101.3001.7020">GitHub</a>–&gt; settings–&gt;SSH and GPG Keys –&gt; new SSH key，然后保存。</p>
+<ol>
+<li><p>重新执行 ssh -vT <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;">&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;</a> , 成功提示:</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-13_23-11-47-20221015235716991.png" alt="Xnip2022-10-13_23-11-47.png"></p>
+</li>
+</ol>
+<h3 id="将-SSH-keys-保存到-Github"><a href="#将-SSH-keys-保存到-Github" class="headerlink" title="将 SSH keys 保存到 Github"></a>将 SSH keys 保存到 Github</h3><p>打开 github 点击头像 -&gt;settings, 在设置页面找到 SSH and GPG keys，单击 New SSH key 新建 SSH KEY。</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/8bb7cb7b-dfc4-46cc-a13c-5a90c98dea44.png" alt="Hexo%20+%20%E9%98%BF%E9%87%8C%E4%BA%91%20&amp;%20GitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%20dd189847cf2746a598db81742168d078/8bb7cb7b-dfc4-46cc-a13c-5a90c98dea44.png"></p>
+<h3 id="测试-sshkey-是否添加成功"><a href="#测试-sshkey-是否添加成功" class="headerlink" title="测试 sshkey 是否添加成功"></a>测试 sshkey 是否添加成功</h3><p>在 git bash 测试 sshkey 是否添加成功，输入（Mac系统直接在终端输入以下代码：）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>第一次连接测试需要输入 yes，正常输出是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &#x27;github.com (207.97.227.239)&#x27; can&#x27;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br><span class="line"># 此处请输入yes</span><br><span class="line">Hi username! You&#x27;ve successfully authenticated, but GitHub does not</span><br><span class="line">provide shell access.</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取GitHub登录令牌"><a href="#获取GitHub登录令牌" class="headerlink" title="获取GitHub登录令牌"></a>获取GitHub登录令牌</h3><p>打开GitHub，点击右上角头像，进入设置，选择developer settings</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-13_23-19-14-20221015235742313.png" alt="Xnip2022-10-13_23-19-14.png"></p>
+<p>点击Personal access tokens，然后点击generate new token，进入令牌设置页面，最后保存即可，保存完成后把令牌复制到备忘录，防止忘记。</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-13_23-25-12-20221015235759608.png" alt="Xnip2022-10-13_23-25-12.png"></p>
+<h3 id="配置-hexo-部署插件"><a href="#配置-hexo-部署插件" class="headerlink" title="配置 hexo 部署插件"></a>配置 hexo 部署插件</h3><p>确保你安装了 hexo-deployer-git, 如果没有，在 [Blogroot] 路径下右键 -&gt;Git Bash Here，输入：（Mac系统直接在终端输入以下代码：）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改-deploy-配置项"><a href="#修改-deploy-配置项" class="headerlink" title="修改 deploy 配置项"></a>修改 deploy 配置项</h3><p>打开 [Blogroot]&#x2F;_config.yml, 修改底部的 deploy 配置项：（百度下载atom软件，安装后打开，然后在终端输入cd &#x2F;Users&#x2F;gejianya&#x2F;Desktop&#x2F;Blog 回车，再输入 atom . 回车，即可用atom打开Blog文件夹内文件，并手动定位到_config.yml文件进行以下修改）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/gejianya/gejianya.github.io.git  #你的仓库http地址</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+
+<p>若以上内容已经准确配置，把本地 hexo 博客内容提交到 git 仓库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">#Mac系统需要获取管理员权限，win系统这步省略</span><br><span class="line">cd /Users/gejianya/Desktop/Blog</span><br><span class="line">#定位到站点目录</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">#在站点目录下执行以上安装hexo-deployer-git插件</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>中间会出现让你输入你GitHub账号的用户名和密码，密码可以使用令牌复制粘贴来登录。</p>
+<p>不出意外，就可以在浏览器上输入 <a target="_blank" rel="noopener" href="https://username.github.io/">https://username.github.io</a> 访问你的博客了。</p>
+<p>这是我的：<a href="http://gejianya.github.io/">gejianya.github.io</a></p>
+<h2 id="解决-hexo-github-提交代码时-Error-Spawn-failed-的错误"><a href="#解决-hexo-github-提交代码时-Error-Spawn-failed-的错误" class="headerlink" title="解决 hexo+github 提交代码时 Error: Spawn failed 的错误"></a>解决 hexo+github 提交代码时 Error: Spawn failed 的错误</h2><h3 id="1-问题背景"><a href="#1-问题背景" class="headerlink" title="1. 问题背景"></a>1. 问题背景</h3><p>今天在使用<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>提交代码时，发现提交不上去，报错如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/371e2c25-8da5-4836-ae56-117746ad7647-20221015235821745.png" alt="Hexo%20+%20%E9%98%BF%E9%87%8C%E4%BA%91%20&amp;%20GitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%20dd189847cf2746a598db81742168d078/371e2c25-8da5-4836-ae56-117746ad7647.png"></p>
+<p>报错代码如下所示，发现应该是推代码出现了问题。（毕竟使用 hexo 在本地时发现是正常的）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</span><br><span class="line">remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.</span><br><span class="line">fatal: Authentication failed for &#x27;https://github.com/XXX/XXX.github.io/&#x27;</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (/Project/7.hexo-blog/node_modules/hexo-util/lib/spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (events.js:400:28)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (internal/child_process.js:277:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-解决方案"><a href="#2-解决方案" class="headerlink" title="2. 解决方案"></a>2. 解决方案</h1><p>网上搜索，发现很多方案是删除. deploy_git 文件，我也进行了尝试，尝试如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 进入到hexo网站根目录</span><br><span class="line">cd ./7.hexo-blog</span><br><span class="line"></span><br><span class="line"># 删除.deploy_git目录</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line"># 执行代码</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line"># 重新打包</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>尝试上面的解决方案后，发现仍然报错。那 hexo 项目没问题，<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=github&spm=1001.2101.3001.7020">github</a> 仓库没问题，那问题肯定出在提交上了。突然我想起来了！今天因为换成了 ssh 提交代码，但 hexo 设置的 github 地址没换。所以重新替换地址，操作如下：</p>
+<p><strong>1. 进入站点目录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ./7.hexo-blog</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 修改修改_config.yml 文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:XXX/XXX.github.io.git</span><br><span class="line">  branch: main</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 重新部署</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>4. 提交成功</strong></p>
+<p>![Hexo%20+%20%E9%98%BF%E9%87%8C%E4%BA%91%20&amp;%20GitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%20dd189847cf2746a598db81742168d078&#x2F;5c4c10bc-48ca-4b5f-9790-2ca6559439fb.png](&#x2F;Users&#x2F;gejianya&#x2F;Downloads&#x2F;Export-ccf5c487-c146-4933-89cd-107c2afc57c6&#x2F;Hexo + 阿里云 &amp; GitHub 搭建个人博客 Mac和Windows系统安装方法 dd189847cf2746a598db81742168d078&#x2F;5c4c10bc-48ca-4b5f-9790-2ca6559439fb.png)</p>
+<p>最近买了个阿里云服务器，结合之前 Hexo 部署到 Github Pages 的经验，尝试将 Hexo 部署到了阿里云上。</p>
+<h2 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h2><p>本次个人博客大致的搭建步骤如下：</p>
+<ul>
+<li>购买阿里云服务器</li>
+<li>配置阿里云服务器</li>
+<li>服务端安装 Nodejs</li>
+<li>服务端安装 Git</li>
+<li>服务端安装 Nginx</li>
+<li>客户端安装 Hexo</li>
+<li>客户端配置免密登录</li>
+<li>服务端创建 Git 仓库</li>
+<li>Hexo 主题配置</li>
+</ul>
+<h2 id="购买阿里云服务器"><a href="#购买阿里云服务器" class="headerlink" title="购买阿里云服务器"></a>购买阿里云服务器</h2><p>这个比较简单，会花钱就行，尽量找一个新注册的账号，这样可以花几十 money 就可以购买一年的阿里云服务器，例如：</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/d06fd9a7-1828-454c-a57e-27dfb20f0721.png" alt="Hexo%20+%20%E9%98%BF%E9%87%8C%E4%BA%91%20&amp;%20GitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%20dd189847cf2746a598db81742168d078/d06fd9a7-1828-454c-a57e-27dfb20f0721.png"></p>
+<p>嗯没错，就是很香，购买完之后简单配置一下就可以使用了，本文基于 CentOS7.9 系统搭建，所以大家要继续下去的话也只能选择 CentOS7.9 咯。</p>
+<h2 id="配置阿里云服务器"><a href="#配置阿里云服务器" class="headerlink" title="配置阿里云服务器"></a>配置阿里云服务器</h2><p>阿里云服务器的配置很简单，主要有：</p>
+<ul>
+<li>重置实例密码</li>
+<li>配置安全组策略</li>
+</ul>
+<p>配置的步骤都很简单，基本就是几分钟的事。</p>
+<p>重置实例密码：</p>
+<p>配置安全组策略：</p>
+<p>配置好之后，复制一下公网 IP，就可以开始建站了。</p>
+<h2 id="服务端安装-Nodejs"><a href="#服务端安装-Nodejs" class="headerlink" title="服务端安装 Nodejs"></a>服务端安装 Nodejs</h2><p>在本地客户端使用 ssh 连接阿里云服务器公网 IP：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@公网IP</span><br></pre></td></tr></table></figure>
+
+<p>一键式安装配置 Nodejs：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp &amp;&amp; wget https://nodejs.org/dist/v17.5.0/node-v17.5.0-linux-x64.tar.xz</span><br><span class="line">tar xf node-v17.5.0-linux-x64.tar.xz</span><br><span class="line">mv node-v17.5.0-linux-x64 /usr/local/node</span><br><span class="line">ln -s /usr/local/node/bin/node /bin/node</span><br><span class="line">ln -s /usr/local/node/bin/npm /bin/npm</span><br><span class="line">echo &#x27;export PATH=/usr/local/node/bin:$PATH&#x27; &gt;&gt; /etc/profile</span><br><span class="line">source /etc/profile</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>执行完就安装成功了。</p>
+<h2 id="服务端安装-Git"><a href="#服务端安装-Git" class="headerlink" title="服务端安装 Git"></a>服务端安装 Git</h2><p>一键式安装 Git：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker</span><br><span class="line">cd /tmp &amp;&amp; wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.gz</span><br><span class="line">tar xf git-2.9.5.tar.gz</span><br><span class="line">cd git-2.9.5 &amp;&amp; make all prefix=/usr/local/git</span><br><span class="line">make install prefix=/usr/local/git</span><br><span class="line">echo &#x27;export PATH=$PATH:/usr/local/git/bin&#x27; &gt;&gt; /etc/bashrc</span><br><span class="line">source /etc/bashrc</span><br><span class="line">git version</span><br><span class="line">git config --global user.name &quot;你的账号&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>执行完就安装成功了，要注意的是客户端也需要安装一下 Git，图形化一直下一步就行。</p>
+<h2 id="服务端安装-Nginx"><a href="#服务端安装-Nginx" class="headerlink" title="服务端安装 Nginx"></a>服务端安装 Nginx</h2><p>一键式安装 Nginx：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel</span><br><span class="line">cd /tmp &amp;&amp; wget http://nginx.org/download/nginx-1.9.9.tar.gz</span><br><span class="line">tar xf nginx-1.9.9.tar.gz</span><br><span class="line">cd nginx-1.9.9 &amp;&amp; ./configure</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<p>配置 Nginx 服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir /data/blog</span><br><span class="line"></span><br><span class="line">vi /usr/local/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line">server_name  服务器公网IP;</span><br><span class="line"></span><br><span class="line">root /data/blog</span><br></pre></td></tr></table></figure>
+
+<p>打开 Nginx 服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/nginx/sbin</span><br><span class="line"></span><br><span class="line">./nginx</span><br></pre></td></tr></table></figure>
+
+<p>至此 Nginx 也安装完成。</p>
+<h2 id="客户端安装-Hexo"><a href="#客户端安装-Hexo" class="headerlink" title="客户端安装 Hexo"></a>客户端安装 Hexo</h2><p>Hexo 也是一键式安装，安装前，设置一下 npm 源：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line"></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p>本地客户端创建 Hexo 博客目录并初始化启动博客：</p>
+<h2 id="本地创建一个目录用于存放博客"><a href="#本地创建一个目录用于存放博客" class="headerlink" title="本地创建一个目录用于存放博客"></a>本地创建一个目录用于存放博客</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>启动之后本地浏览器 localhost:4000 访问一下是否成功。</p>
+<h2 id="配置免密登录"><a href="#配置免密登录" class="headerlink" title="配置免密登录"></a>配置免密登录</h2><p>配置本地客户端与阿里云服务器端的 ssh 免密登录，方便上传仓库时一键式上传。</p>
+<p>在本地客户端生成并上传公共密钥：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br><span class="line"></span><br><span class="line">ssh-copy-id root@阿里云公网IP</span><br><span class="line"></span><br><span class="line">ssh root@阿里云公网IP</span><br></pre></td></tr></table></figure>
+
+<p>如果无需密码即可登录，说明已经配置完成。</p>
+<h2 id="服务端创建-Git-仓库"><a href="#服务端创建-Git-仓库" class="headerlink" title="服务端创建 Git 仓库"></a>服务端创建 Git 仓库</h2><p>服务器上创建一个 Git 仓库，该仓库中新建一个 post-receive 钩子文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">git init --bare hexo.git</span><br><span class="line">vi ~/hexo.git/hooks/post-receive</span><br><span class="line"></span><br><span class="line">git --work-tree=/data/blog --git-dir=/root/hexo.git checkout -f</span><br><span class="line"></span><br><span class="line">chmod +x ~/hexo.git/hooks/post-receive</span><br><span class="line">chmod -R 777 /data/blog</span><br></pre></td></tr></table></figure>
+
+<p>至此，Git 仓库创建并配置完成，对应的本地客户端也需要配置一下！</p>
+<p>在本地计算机 hexo 的工程目录下，找到 _config.yml，对 deploy 参数进行修改，如下图所示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: root@公网IP:/root/hexo.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>在本地计算机安装插件: hexo-deployer-git 和 hexo-server，插件的作用分别是使用 Git 自动部署，和 hexo 本地简单的服务器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-server</span><br><span class="line"></span><br><span class="line">git config --global user.name &quot;你的账号&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>此时，便可以通过浏览器访问 <a target="_blank" rel="noopener" href="http://阿里云公网ip/">http:&#x2F;&#x2F; 阿里云公网 IP</a> 进入 hexo 我的博客主页了。</p>
+<p>＞通过以上 3 种方式部署 Hexo 博客之后，就拥有了一个最简单的个人博客网站了，下面讲讲博客的简单初始化。</p>
+<h2 id="修改网站关键信息"><a href="#修改网站关键信息" class="headerlink" title="修改网站关键信息"></a>修改网站关键信息</h2><p>Hexo 初始化后，博客网站有一些关键信息是默认的，需要修改为我们自己的信息。</p>
+<h3 id="网站资料"><a href="#网站资料" class="headerlink" title="网站资料"></a>网站资料</h3><p>修改网站各种资料，例如标题、副标题和邮箱等个人资料，请修改博客根目录的站点配置文件 _config.yml：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: 海拥</span><br><span class="line">subtitle: &#x27;一个乐于分享技术与快乐的博主&#x27;</span><br><span class="line">description: &#x27;&#x27;</span><br><span class="line">keywords:</span><br><span class="line">author: haiyong</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="导航菜单"><a href="#导航菜单" class="headerlink" title="导航菜单"></a>导航菜单</h3><p>修改主题配置文件 <code>_config.butterfly.yml</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  首页: / || fas fa-home</span><br><span class="line">  归档: /archives/ || fas fa-archive</span><br><span class="line">  摸鱼||fas fa-fish:</span><br><span class="line">    游戏: /moyu/ || fas fa-gamepad</span><br><span class="line">    工具: /tools/ || fas fa-tools</span><br><span class="line">  蓝桥: /lanqiao/ || fas fa-folder-open</span><br><span class="line">  标签: /tags/ || fas fa-tags</span><br><span class="line"></span><br><span class="line">  友人帐: /link/ || fas fa-link</span><br><span class="line">  关于我: /about/ || fas fa-heart</span><br></pre></td></tr></table></figure>
+
+<h2 id="博客关键页面生成"><a href="#博客关键页面生成" class="headerlink" title="博客关键页面生成"></a>博客关键页面生成</h2><p>博客有一些关键页面需要手动生成。</p>
+<h3 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h3><p>进入 Hexo 博客的根目录，执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>source/tags/index.md</code> 文件，修改如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2022-03-11 12:53:45</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h3 id="分类页"><a href="#分类页" class="headerlink" title="分类页"></a>分类页</h3><p>进入 Hexo 博客的根目录，执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>source/categories/index.md 文件</code>，修改如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2022-03-11 12:56:06</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h3 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h3><h3 id="创建友情链接页面"><a href="#创建友情链接页面" class="headerlink" title="创建友情链接页面"></a>创建友情链接页面</h3><p>进入 Hexo 博客的根目录，执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page link</span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>source/link/index.md</code> 文件，修改如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 友情链接</span><br><span class="line">date: 2022-03-11 12:57:48</span><br><span class="line">type: &quot;link&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h3 id="友情链接添加"><a href="#友情链接添加" class="headerlink" title="友情链接添加"></a>友情链接添加</h3><p>在 Hexo 博客目录中的 <code>source/_data</code>（如果没有 _data 文件夹，请自行创建），创建一个文件 <code>link.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">- class_name: 本站</span><br><span class="line">  class_desc: 交换友链可在下方评论，或者微信/QQ联系我</span><br><span class="line">  link_list:</span><br><span class="line">    - name: 海拥</span><br><span class="line">      link: https://haiyong.site</span><br><span class="line">      avatar: https://haiyong.site/img/favicon.png</span><br><span class="line">      descr: 一个乐于分享技术与快乐的博主</span><br><span class="line"></span><br><span class="line">- class_name: 友情链接</span><br><span class="line">  class_desc: 那些人，那些事</span><br><span class="line">  link_list:</span><br><span class="line">    - name: 三笠ぃ</span><br><span class="line">      link: https://luciferlpc.top/</span><br><span class="line">      avatar: https://luciferlpc.top/img/avatar.jpg</span><br><span class="line">      descr: 好好吃饭🍣 好好睡觉💤 敲敲代码</span><br><span class="line">    - name: iMaeGoo’s Blog</span><br><span class="line">      link: https://www.imaegoo.com</span><br><span class="line">      avatar: https://www.imaegoo.com/images/avatar.jpg</span><br><span class="line">      descr: 虹墨空间站</span><br></pre></td></tr></table></figure>
+
+<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>进入 Hexo 博客的根目录，执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>source/about-me/index.md</code> 文件，修改如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于作者</span><br><span class="line">date: 2022-03-11 13:01:21</span><br><span class="line">type: &quot;about&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>至此，简单的 Hexo 博客框架就完成搭建了，至于更多的美化可以参考：</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://gejianya.github.io">gejianya</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://gejianya.github.io/post/d95d7e09.html">https://gejianya.github.io/post/d95d7e09.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://gejianya.github.io" target="_blank">我是电商产品经理</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo</a><a class="post-meta__tags" href="/tags/github/">github</a><a class="post-meta__tags" href="/tags/%E5%BB%BA%E7%AB%99/">建站</a><a class="post-meta__tags" href="/tags/%E4%B8%BB%E9%A2%98/">主题</a><a class="post-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-16_02-39-52.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信支付"/></a><div class="post-qr-code-desc">微信支付</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝支付"/></a><div class="post-qr-code-desc">支付宝支付</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/7778423a.html"><img class="prev-cover" src="https://raw.githubusercontent.com/gejianya/img-picgo/master/a5c913c0-62e0-46f9-8fd1-377f2d0011b0.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">网站建设文档(一)上传服务器、网页编辑、网页美化</div></div></a></div><div class="next-post pull-right"><a href="/post/4a17b156.html"><img class="next-cover" src="/linear-gradient(20deg,%20#0062be,%20#925696,%20#cc426e,%20#fb0347)" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/7778423a.html" title="网站建设文档(一)上传服务器、网页编辑、网页美化"><img class="cover" src="https://raw.githubusercontent.com/gejianya/img-picgo/master/a5c913c0-62e0-46f9-8fd1-377f2d0011b0.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-16</div><div class="title">网站建设文档(一)上传服务器、网页编辑、网页美化</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">gejianya</div><div class="author-info__description">成为国内顶成功的电商产品专家</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://www.zhihu.com/people/xiao-ya-47-25"><i class="fa-brands fa-zhihu"></i><span>人生思考</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/img/weixin_me.JPG" target="_blank" title=""><i class="fa-brands fa-weixin"></i></a><a class="social-icon" href="https://weibo.com/u/2531893640" target="_blank" title=""><i class="fa-brands fa-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/8533657?spm_id_from=333.1007.0.0" target="_blank" title=""><i class="fa-brands fa-bilibili"></i></a><a class="social-icon" href="mailto:gejianya@139.com" target="_blank" title=""><i class="fa-solid fa-envelope"></i></a></div></div><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}</style><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo-%E9%98%BF%E9%87%8C%E4%BA%91-amp-GitHub-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-Mac%E5%92%8CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js"><span class="toc-number">1.1.1.</span> <span class="toc-text">Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git"><span class="toc-number">1.1.2.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mac%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85homebrew"><span class="toc-number">1.1.3.</span> <span class="toc-text">Mac系统安装homebrew</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87homebrew%E5%AE%89%E8%A3%85Git"><span class="toc-number">1.1.4.</span> <span class="toc-text">通过homebrew安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BDGit%EF%BC%88Git%E5%AE%89%E8%A3%85%E9%94%99%E8%AF%AF%E6%88%96%E7%89%88%E6%9C%AC%E5%A4%AA%E4%BD%8E%EF%BC%8C%E9%9C%80%E8%A6%81%E5%8D%B8%E8%BD%BD%E7%9A%84%E6%83%85%E5%86%B5%EF%BC%89"><span class="toc-number">1.1.5.</span> <span class="toc-text">卸载Git（Git安装错误或版本太低，需要卸载的情况）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Hexo"><span class="toc-number">1.1.6.</span> <span class="toc-text">安装 Hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub"><span class="toc-number">1.2.</span> <span class="toc-text">部署到 GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C-github"><span class="toc-number">1.2.1.</span> <span class="toc-text">注册 github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.2.</span> <span class="toc-text">新建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-Git-%E4%B8%8E-GitHub"><span class="toc-number">1.2.3.</span> <span class="toc-text">配置 Git 与 GitHub:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E8%8E%B7%E5%8F%96%E5%85%AC%E9%92%A5"><span class="toc-number">1.2.4.</span> <span class="toc-text">本地获取公钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86-SSH-keys-%E4%BF%9D%E5%AD%98%E5%88%B0-Github"><span class="toc-number">1.2.5.</span> <span class="toc-text">将 SSH keys 保存到 Github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-sshkey-%E6%98%AF%E5%90%A6%E6%B7%BB%E5%8A%A0%E6%88%90%E5%8A%9F"><span class="toc-number">1.2.6.</span> <span class="toc-text">测试 sshkey 是否添加成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96GitHub%E7%99%BB%E5%BD%95%E4%BB%A4%E7%89%8C"><span class="toc-number">1.2.7.</span> <span class="toc-text">获取GitHub登录令牌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-hexo-%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6"><span class="toc-number">1.2.8.</span> <span class="toc-text">配置 hexo 部署插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-deploy-%E9%85%8D%E7%BD%AE%E9%A1%B9"><span class="toc-number">1.2.9.</span> <span class="toc-text">修改 deploy 配置项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3-hexo-github-%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E6%97%B6-Error-Spawn-failed-%E7%9A%84%E9%94%99%E8%AF%AF"><span class="toc-number">1.3.</span> <span class="toc-text">解决 hexo+github 提交代码时 Error: Spawn failed 的错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 问题背景</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2. 解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">搭建过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">购买阿里云服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.3.</span> <span class="toc-text">配置阿里云服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E8%A3%85-Nodejs"><span class="toc-number">2.4.</span> <span class="toc-text">服务端安装 Nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E8%A3%85-Git"><span class="toc-number">2.5.</span> <span class="toc-text">服务端安装 Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E8%A3%85-Nginx"><span class="toc-number">2.6.</span> <span class="toc-text">服务端安装 Nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%89%E8%A3%85-Hexo"><span class="toc-number">2.7.</span> <span class="toc-text">客户端安装 Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%94%A8%E4%BA%8E%E5%AD%98%E6%94%BE%E5%8D%9A%E5%AE%A2"><span class="toc-number">2.8.</span> <span class="toc-text">本地创建一个目录用于存放博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95"><span class="toc-number">2.9.</span> <span class="toc-text">配置免密登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%88%9B%E5%BB%BA-Git-%E4%BB%93%E5%BA%93"><span class="toc-number">2.10.</span> <span class="toc-text">服务端创建 Git 仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E7%BD%91%E7%AB%99%E5%85%B3%E9%94%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">2.11.</span> <span class="toc-text">修改网站关键信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E8%B5%84%E6%96%99"><span class="toc-number">2.11.1.</span> <span class="toc-text">网站资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95"><span class="toc-number">2.11.2.</span> <span class="toc-text">导航菜单</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%85%B3%E9%94%AE%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90"><span class="toc-number">2.12.</span> <span class="toc-text">博客关键页面生成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E9%A1%B5"><span class="toc-number">2.12.1.</span> <span class="toc-text">标签页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E9%A1%B5"><span class="toc-number">2.12.2.</span> <span class="toc-text">分类页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5"><span class="toc-number">2.12.3.</span> <span class="toc-text">友情链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5%E9%A1%B5%E9%9D%A2"><span class="toc-number">2.12.4.</span> <span class="toc-text">创建友情链接页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.12.5.</span> <span class="toc-text">友情链接添加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91"><span class="toc-number">2.12.6.</span> <span class="toc-text">关于我</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/7778423a.html" title="网站建设文档(一)上传服务器、网页编辑、网页美化"><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/a5c913c0-62e0-46f9-8fd1-377f2d0011b0.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网站建设文档(一)上传服务器、网页编辑、网页美化"/></a><div class="content"><a class="title" href="/post/7778423a.html" title="网站建设文档(一)上传服务器、网页编辑、网页美化">网站建设文档(一)上传服务器、网页编辑、网页美化</a><time datetime="2022-10-16T03:40:29.000Z" title="发表于 2022-10-16 11:40:29">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/d95d7e09.html" title="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法"><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-16_02-39-52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法"/></a><div class="content"><a class="title" href="/post/d95d7e09.html" title="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法">Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法</a><time datetime="2022-10-15T16:26:59.000Z" title="发表于 2022-10-16 00:26:59">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/4a17b156.html" title="Hello World"><img src="/linear-gradient(20deg,%20#0062be,%20#925696,%20#cc426e,%20#fb0347)" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/post/4a17b156.html" title="Hello World">Hello World</a><time datetime="2022-10-13T18:09:57.331Z" title="发表于 2022-10-14 02:09:57">2022-10-14</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s1.ax1x.com/2022/10/15/x0roge.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By gejianya</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '1q63YMM2rXIOJ8ukOcBQRpPX-gzGzoHsz',
+      appKey: 'xdDbBxmnNcEKrhiDSGZ5pSsR',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><div class="aplayer no-destroy" data-id="7040959775" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>

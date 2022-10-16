@@ -1,0 +1,514 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>网站建设文档(一)上传服务器、网页编辑、网页美化 | 我是电商产品经理</title><meta name="keywords" content="hexo,github,主题,网站设置,美化"><meta name="author" content="gejianya,gejianya@139.com"><meta name="copyright" content="gejianya"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="网站建设文档(一)上传服务器、网页编辑、网页美化 本帖的主要目的是用最平实的语言描述博客美化的进程，同时在每个章节为可能涉及的知识点提供相应的工具网站以供读者学习。  hexo-theme-butterfly 主题是基于 hexo-theme-melody 的基础上进行开发的。 Butterfly 主题安装GitHub安装在你的 Hexo 根目录里执行： 1git clone -b master">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网站建设文档(一)上传服务器、网页编辑、网页美化">
+<meta property="og:url" content="https://gejianya.github.io/post/7778423a.html">
+<meta property="og:site_name" content="我是电商产品经理">
+<meta property="og:description" content="网站建设文档(一)上传服务器、网页编辑、网页美化 本帖的主要目的是用最平实的语言描述博客美化的进程，同时在每个章节为可能涉及的知识点提供相应的工具网站以供读者学习。  hexo-theme-butterfly 主题是基于 hexo-theme-melody 的基础上进行开发的。 Butterfly 主题安装GitHub安装在你的 Hexo 根目录里执行： 1git clone -b master">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/gejianya/img-picgo/master/a5c913c0-62e0-46f9-8fd1-377f2d0011b0.gif">
+<meta property="article:published_time" content="2022-10-16T03:40:29.000Z">
+<meta property="article:modified_time" content="2022-10-16T04:32:27.814Z">
+<meta property="article:author" content="gejianya">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="主题">
+<meta property="article:tag" content="网站设置">
+<meta property="article:tag" content="美化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/gejianya/img-picgo/master/a5c913c0-62e0-46f9-8fd1-377f2d0011b0.gif"><link rel="shortcut icon" href="/img/tubiao.png"><link rel="canonical" href="https://gejianya.github.io/post/7778423a"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网站建设文档(一)上传服务器、网页编辑、网页美化',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-16 12:32:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-archive"></i><span> 电商设计</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book"></i><span> 电商前台</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电商后台</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/gejianya/img-picgo/master/a5c913c0-62e0-46f9-8fd1-377f2d0011b0.gif')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">我是电商产品经理</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-archive"></i><span> 电商设计</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book"></i><span> 电商前台</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电商后台</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">网站建设文档(一)上传服务器、网页编辑、网页美化</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-16T03:40:29.000Z" title="发表于 2022-10-16 11:40:29">2022-10-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-16T04:32:27.814Z" title="更新于 2022-10-16 12:32:27">2022-10-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>26分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="网站建设文档(一)上传服务器、网页编辑、网页美化"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="网站建设文档-一-上传服务器、网页编辑、网页美化"><a href="#网站建设文档-一-上传服务器、网页编辑、网页美化" class="headerlink" title="网站建设文档(一)上传服务器、网页编辑、网页美化"></a>网站建设文档(一)上传服务器、网页编辑、网页美化</h1><blockquote>
+<p>本帖的主要目的是用最平实的语言描述博客美化的进程，同时在每个章节为可能涉及的知识点提供相应的工具网站以供读者学习。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">hexo-theme-butterfly</a> 主题是基于 <a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody">hexo-theme-melody</a> 的基础上进行开发的。</p>
+<h1 id="Butterfly-主题安装"><a href="#Butterfly-主题安装" class="headerlink" title="Butterfly 主题安装"></a><strong><strong>Butterfly 主题安装</strong></strong></h1><h2 id="GitHub安装"><a href="#GitHub安装" class="headerlink" title="GitHub安装"></a>GitHub安装</h2><p>在你的 Hexo 根目录里执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<p>升级方法：在主題目录下，进行 <code>git pull</code></p>
+<h2 id="Gitee安装"><a href="#Gitee安装" class="headerlink" title="Gitee安装"></a>Gitee安装</h2><p>在你的 Hexo 根目录里执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">#对于本地hexo文件的所有操作都在管理员权限下进行</span><br><span class="line">cd /Users/gejianya/Desktop/Blog</span><br><span class="line">git clone -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<p>升级方法：在主題目录下，进行 <code>git pull</code></p>
+<h2 id="NPM安装"><a href="#NPM安装" class="headerlink" title="NPM安装"></a>NPM安装</h2><blockquote>
+<p>此方法只支持 Hexo 5.0.0 以上版本<br>通过 npm 安装并不会在 themes 里生成主题文件夹，而是在 node_modules 里生成</p>
+</blockquote>
+<p>在你的 Hexo 根目录里执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-theme-butterfly</span><br></pre></td></tr></table></figure>
+
+<p>升级方法：在 Hexo 根目录下，进行 <code>npm update hexo-theme-butterfly</code></p>
+<h2 id="应用主题"><a href="#应用主题" class="headerlink" title="应用主题"></a>应用主题</h2><p>修改 Hexo 根目录下的 <code>_config.yml</code>，把主题改为 butterfly：（使用atom编辑，在终端Blog根目录下即：cd &#x2F;Users&#x2F;gejianya&#x2F;Desktop&#x2F;Blog，输入atom . 命令打开yml文件进行编辑。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: butterfly</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2022/10/16/xBZAjs.png" alt="Xnip2022-10-14_11-36-53.png"></p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>如果你没有 pug 以及 stylus 的渲染器，请下载安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="升级建议"><a href="#升级建议" class="headerlink" title="升级建议"></a>升级建议</h2><p>为了减少升级主题后带来的不便，请使用以下方法：</p>
+<p>在 hexo 的根目录创建一个文件 <code>_config.butterfly.yml</code>，并把<strong>主题目录</strong>的 <code>_config.yml</code> 内容复制到 <code>_config.butterfly.yml</code> 去，以后只需要在 <code>_config.butterfly.yml</code> 进行配置就行。( 注意: 复制的是主题的 _config.yml ,而不是 hexo 的 _config.yml)</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意： 不要把主题目录的 _config.<span class="property">yml</span> 删掉</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意： 以後只需要在 _config.<span class="property">butterfly</span>.<span class="property">yml</span>進行配置就行。</span><br><span class="line">如果使用了 _config.<span class="property">butterfly</span>.<span class="property">yml</span>， 配置主題的 _config.<span class="property">yml</span> 將不會有效果。</span><br><span class="line"><span class="title class_">Hexo</span>会自动合并主题中的_config.<span class="property">yml</span>和 _config.<span class="property">butterfly</span>.<span class="property">yml</span>里的配置，如果存在同名配置，会使用_config.<span class="property">butterfly</span>.<span class="property">yml</span>的配置，其优先度较高。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>鉴于每个人的根目录名称都不一样，本帖博客根目录一律以 [Blogroot] 指代。本帖涉及魔改源码的内容，会使用 diff 代码块标识，复制时请不要忘记删除前面的 +、- 符号。因为 .pug 和 .styl 以及 .yml 等对缩进要求较为严格，请尽量 不要使用记事本等无法提供语法高亮的文本编辑器 进行修改。博主同款编辑器的安装配置教程请参看：Atom 插件安装和推荐本帖基于 Butterfly 主题进行魔改方案编写，因此请读者优先掌握 Butterfly 主题官方文档 的内容后再来进行魔改。以避免不必要的兼容性问题</p>
+</blockquote>
+<h3 id="连接GitHub失败问题解决"><a href="#连接GitHub失败问题解决" class="headerlink" title="连接GitHub失败问题解决"></a>连接GitHub失败问题解决</h3><p>当上传代码到GitHub时出现：Failed to connect to <a target="_blank" rel="noopener" href="http://github.com/">github.com</a> port 443 after 76009 ms: Operation timed out报错，就在设置里把网络设置DNS改为：114.114.114.114</p>
+<p><img src="https://s1.ax1x.com/2022/10/16/xBZZBq.png" alt="Xnip2022-10-14_21-40-17.png"></p>
+<h1 id="Butterfly-主题美化"><a href="#Butterfly-主题美化" class="headerlink" title="Butterfly 主题美化"></a><strong><strong>Butterfly 主题美化</strong></strong></h1><h2 id="生成文章唯一链接"><a href="#生成文章唯一链接" class="headerlink" title="生成文章唯一链接"></a>生成文章唯一链接</h2><p>Hexo 的默认文章链接格式是年，月，日，标题这种格式来生成的。如果你的标题是中文的话，那你的 URL 链接就会包含中文，</p>
+<p>复制后的 URL 路径就是把中文变成了一大堆字符串编码，如果你在其他地方用这边文章的 url 链接，偶然你又修改了改文章的标题，那这个 URL 链接就会失效。为了给每一篇文章来上一个属于自己的链接，写下此教程，利用 hexo-abbrlink 插件，A Hexo plugin to generate static post link based on post titles , 来解决这个问题。 参考 github 官方： hexo-abbrlink 按照此教程配置完之后如下：</p>
+<p>1、安装插件，在博客根目录 [Blogroot] 下打开终端，运行以下指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+
+<p>2、插件安装成功后，在根目录 [Blogroot] 的配置文件 _config.yml 找到 permalink：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- permalink: :year/:month/:day/:title/</span><br><span class="line">#修改为</span><br><span class="line">+   permalink: post/:abbrlink.html # post为自定义前缀</span><br><span class="line">+ abbrlink:</span><br><span class="line">+       alg: crc32   #算法： crc16(default) and crc32</span><br><span class="line">+       rep: hex     #进制： dec(default) and hex</span><br></pre></td></tr></table></figure>
+
+<p>按下面代码块整体直接复制过去替换原代码：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span>: [<span class="attr">https</span>:<span class="comment">//gejianya.github.io](https://gejianya.github.io/project)</span></span><br><span class="line"><span class="attr">permalink</span>: post/:abbrlink.<span class="property">html</span> # post为自定义前缀</span><br><span class="line"><span class="attr">abbrlink</span>:</span><br><span class="line">    <span class="attr">alg</span>: crc32   #算法： <span class="title function_">crc16</span>(<span class="keyword">default</span>) and crc32</span><br><span class="line">    <span class="attr">rep</span>: hex     #进制： <span class="title function_">dec</span>(<span class="keyword">default</span>) and hex</span><br><span class="line"><span class="attr">permalink_defaults</span>:</span><br><span class="line"><span class="attr">pretty_urls</span>:</span><br><span class="line">  <span class="attr">trailing_index</span>: <span class="literal">true</span> # <span class="title class_">Set</span> to <span class="literal">false</span> to remove trailing <span class="string">&#x27;index.html&#x27;</span> <span class="keyword">from</span> permalinks</span><br><span class="line">  <span class="attr">trailing_html</span>: <span class="literal">true</span> # <span class="title class_">Set</span> to <span class="literal">false</span> to remove trailing <span class="string">&#x27;.html&#x27;</span> <span class="keyword">from</span> permalinks</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码样式"><a href="#代码样式" class="headerlink" title="代码样式"></a>代码样式</h2><blockquote>
+<p>代码块中的所有功能只适用于 Hexo 自带的代码渲染。如果使用第三方的渲染器，不一定会有效</p>
+</blockquote>
+<h3 id="代码高亮主题"><a href="#代码高亮主题" class="headerlink" title="代码高亮主题"></a>代码高亮主题</h3><p><code>Butterfly</code> 支持 6 种代码高亮样式：</p>
+<ul>
+<li>darker</li>
+<li>pale night</li>
+<li>light</li>
+<li>ocean</li>
+<li>mac</li>
+<li>mac light</li>
+</ul>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">highlight_theme: mac</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码复制"><a href="#代码复制" class="headerlink" title="代码复制"></a>代码复制</h3><p>主题支持代码复製功能</p>
+<p>修改 主题配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">highlight_copy: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码高度限制"><a href="#代码高度限制" class="headerlink" title="代码高度限制"></a>代码高度限制</h3><blockquote>
+<p>3.7.0 及以上支持</p>
+</blockquote>
+<h2 id="顶部图"><a href="#顶部图" class="headerlink" title="顶部图"></a>顶部图</h2><p>| — | — |</p>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index_img: xxx.png</span><br></pre></td></tr></table></figure>
+
+<p>其它页面 （tags&#x2F;categories &#x2F; 自建页面）和文章页的 <code>top_img</code> ，请到对应的 md 页面设置 <code>front-matter</code> 中的 <code>top_img</code></p>
+<p><code>tag_per_img</code> 和 <code>category_per_img</code> 是 3.2.0 新增的内容，可对 tag 和 category 进行单独的配置</p>
+<p>并不推荐为每个 tag 和每个 category 都配置不同的顶部图，因为配置太多会拖慢生成速度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tag_per_img：</span><br><span class="line">  aplayer: https://xxxxxx.png</span><br><span class="line">  android: ddddddd.png</span><br><span class="line"></span><br><span class="line">category_per_img：</span><br><span class="line">  随想: hdhdh.png</span><br><span class="line">  推荐: ddjdjdjd.png</span><br></pre></td></tr></table></figure>
+
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">footer_bg: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="打字效果"><a href="#打字效果" class="headerlink" title="打字效果"></a>打字效果</h2><p>打字效果 <a target="_blank" rel="noopener" href="https://github.com/disjukr/activate-power-mode">activate-power-mode</a></p>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">activate_power_mode:</span><br><span class="line">  enable: true</span><br><span class="line">  colorful: true</span><br><span class="line">  shake: true</span><br><span class="line">  mobile: false</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/98405160-b6b5-4fdc-9952-724503a5e7e5.gif" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/98405160-b6b5-4fdc-9952-724503a5e7e5.gif"></p>
+<h2 id="背景特效"><a href="#背景特效" class="headerlink" title="背景特效"></a>背景特效</h2><p>好看的彩带背景，可設置每次刷新更換彩带，或者每次點擊更換彩带<br>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">canvas_ribbon:</span><br><span class="line">  enable: false</span><br><span class="line">  size: 150</span><br><span class="line">  alpha: 0.6</span><br><span class="line">  zIndex: -1</span><br><span class="line">  click_to_change: false</span><br><span class="line">  mobile: false</span><br></pre></td></tr></table></figure>
+
+<p>相关配置可查看 <a target="_blank" rel="noopener" href="https://github.com/hustcc/ribbon.js">canvas_ribbon</a></p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/2b7f8519-ce85-4435-ae39-4a3b6fb5ce37.png" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/2b7f8519-ce85-4435-ae39-4a3b6fb5ce37.png"></p>
+<p>好看的彩带背景，会飘动<br>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">canvas_fluttering_ribbon:</span><br><span class="line">  enable: true</span><br><span class="line">  mobile: true</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/0d320d4a-e305-4f01-9b42-26cb6865f39a.gif" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/0d320d4a-e305-4f01-9b42-26cb6865f39a.gif"></p>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">canvas_nest:</span><br><span class="line">  enable: true</span><br><span class="line">  color: &#x27;0,0,255&#x27;</span><br><span class="line">  opacity: 0.7</span><br><span class="line">  zIndex: -1</span><br><span class="line">  count: 99</span><br><span class="line">  mobile: false</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/c17d44ef-3abc-4223-b4c4-aae28b474273.gif" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/c17d44ef-3abc-4223-b4c4-aae28b474273.gif"></p>
+<h2 id="鼠标点击效果"><a href="#鼠标点击效果" class="headerlink" title="鼠标点击效果"></a>鼠标点击效果</h2><p><code>zIndex</code>建议只在<code>-1</code>和<code>9999</code>上选<code>-1</code> 代表烟火效果在底部<code>9999</code> 代表烟火效果在前面</p>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fireworks:</span><br><span class="line">  enable: true</span><br><span class="line">  zIndex: 9999</span><br><span class="line">  mobile: false</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/a5c913c0-62e0-46f9-8fd1-377f2d0011b0.gif" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/a5c913c0-62e0-46f9-8fd1-377f2d0011b0.gif"></p>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">click_heart:</span><br><span class="line">  enable: true</span><br><span class="line">  mobile: false</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/c0a68edd-514e-484e-a6ee-71b308053f33.gif" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/c0a68edd-514e-484e-a6ee-71b308053f33.gif"></p>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ClickShowText:</span><br><span class="line">  enable: false</span><br><span class="line">  text:</span><br><span class="line">    - I</span><br><span class="line">    - LOVE</span><br><span class="line">    - YOU</span><br><span class="line">  fontSize: 15px</span><br><span class="line">  random: false</span><br><span class="line">  mobile: false</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/6b96352b-b9b6-46de-a9ab-ad72ddd6d5e6.gif" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/6b96352b-b9b6-46de-a9ab-ad72ddd6d5e6.gif"></p>
+<h2 id="网站副标题"><a href="#网站副标题" class="headerlink" title="网站副标题"></a>网站副标题</h2><p>可设置主页中展示的网站副标题或者自己喜欢的座右铭</p>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">title: Hexo</span><br><span class="line">subtitle:</span><br><span class="line">  enable: true</span><br><span class="line"></span><br><span class="line">  effect: true</span><br><span class="line"></span><br><span class="line">  loop: true</span><br><span class="line"></span><br><span class="line">  sub:</span><br><span class="line">    - 我双手合十的愿望里永远有你。</span><br><span class="line">    - 穿越人海，只为与你相拥。</span><br><span class="line">    - 手握日月摘 ♥ 陈。</span><br></pre></td></tr></table></figure>
+
+<p>预览见本站主页：<a target="_blank" rel="noopener" href="https://haiyong.site/">haiyong.site</a></p>
+<h2 id="侧边栏设置"><a href="#侧边栏设置" class="headerlink" title="侧边栏设置"></a>侧边栏设置</h2><h3 id="侧边排版"><a href="#侧边排版" class="headerlink" title="侧边排版"></a>侧边排版</h3><p>可自行决定哪个项目需要显示，可决定位置，也可以设置不显示侧边栏。</p>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">aside:</span><br><span class="line">  enable: true</span><br><span class="line">  hide: false</span><br><span class="line">  button: true</span><br><span class="line">  mobile: false</span><br><span class="line">  position: right</span><br><span class="line">  card_author:</span><br><span class="line">    enable: true</span><br><span class="line">    description: 手握日月摘心陈</span><br><span class="line">    button:</span><br><span class="line">      enable: true</span><br><span class="line">      icon: iconfont icon-youxishoubing</span><br><span class="line">      text: 摸鱼</span><br><span class="line">      link: https://haiyong.site/moyu/</span><br><span class="line">  card_announcement:</span><br><span class="line">    enable: true</span><br><span class="line">    content:</span><br><span class="line">      &lt;b&gt;&lt;font color=&quot;#e66b6d&quot;&gt;双&lt;/font&gt; &lt;font color=&quot;#e66d98&quot;&gt;手&lt;/font&gt; &lt;font color=&quot;#e66cc6&quot;&gt;合&lt;/font&gt; &lt;font color=&quot;#cc6de6&quot;&gt;十&lt;/font&gt; &lt;font color=&quot;#9770e6&quot;&gt;成&lt;/font&gt; &lt;font color=&quot;#6d93e6&quot;&gt;为&lt;/font&gt; &lt;font color=&quot;#6fcde6&quot;&gt;自&lt;/font&gt; &lt;font color=&quot;#72e6b6&quot;&gt;己&lt;/font&gt; &lt;font color=&quot;#72e689&quot;&gt;的&lt;/font&gt; &lt;font color=&quot;#99e670&quot;&gt;神&lt;/font&gt;, &lt;font color=&quot;#cde670&quot;&gt;自&lt;/font&gt; &lt;font color=&quot;#e6df72&quot;&gt;己&lt;/font&gt; &lt;font color=&quot;#e6c073&quot;&gt;所&lt;/font&gt; &lt;font color=&quot;#e6a271&quot;&gt;信&lt;/font&gt; &lt;font color=&quot;#e6796f&quot;&gt;念&lt;/font&gt; &lt;font color=&quot;#e65454&quot;&gt;的&lt;/font&gt; &lt;font color=&quot;#e63333&quot;&gt;即&lt;/font&gt; &lt;font color=&quot;#e62c2c&quot;&gt;是&lt;/font&gt; &lt;font color=&quot;#e60101&quot;&gt;信&lt;/font&gt; &lt;font color=&quot;#e60101&quot;&gt;仰&lt;/font&gt;&lt;/b&gt;</span><br><span class="line">      &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/f7384c88956d4378b72e47548e19c9f8.gif&quot; width=&quot;50&quot; alt=&quot;mao&quot;&gt;&lt;/p&gt;</span><br><span class="line">      &lt;p align=&quot;center&quot;&gt;微信号：wh18363&lt;/p&gt;</span><br><span class="line">      &lt;p align=&quot;center&quot;&gt;QQ号：1836360247&lt;/p&gt;</span><br><span class="line">  card_recent_post:</span><br><span class="line">    enable: true</span><br><span class="line">    limit: 5</span><br><span class="line">    sort: date</span><br><span class="line">    sort_order:</span><br><span class="line">  card_categories:</span><br><span class="line">    enable: true</span><br><span class="line">    limit: 8</span><br><span class="line">    expand: none</span><br><span class="line">    sort_order:</span><br><span class="line">  card_tags:</span><br><span class="line">    enable: true</span><br><span class="line">    limit: 40</span><br><span class="line">    color: true</span><br><span class="line">    sort_order:</span><br><span class="line">  card_archives:</span><br><span class="line">    enable: true</span><br><span class="line">    type: monthly</span><br><span class="line">    format: MMMM YYYY</span><br><span class="line">    order: -1</span><br><span class="line">    limit: 8</span><br><span class="line">    sort_order:</span><br><span class="line">  card_webinfo:</span><br><span class="line">    enable: true</span><br><span class="line">    post_count: true</span><br><span class="line">    last_push_date: true</span><br><span class="line">    sort_order:</span><br><span class="line">  card_tags color: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="访问人数-busuanzi-UV-和-PV"><a href="#访问人数-busuanzi-UV-和-PV" class="headerlink" title="访问人数 busuanzi (UV 和 PV)"></a>访问人数 busuanzi (UV 和 PV)</h3><p>访问 busuanzi 的<a target="_blank" rel="noopener" href="http://busuanzi.ibruce.info/">官方网站</a>查看更多的介绍。</p>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">busuanzi:</span><br><span class="line">  site_uv: true</span><br><span class="line">  site_pv: true</span><br><span class="line">  page_pv: true</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/3e04d26c-fd63-40ce-b55f-f99f9324c726.png" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/3e04d26c-fd63-40ce-b55f-f99f9324c726.png"></p>
+<h3 id="运行时间"><a href="#运行时间" class="headerlink" title="运行时间"></a>运行时间</h3><p>网页已运行时间</p>
+<p>修改主题配置文件 <code>_config.butterfly.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">runtimeshow:</span><br><span class="line">  enable: true</span><br><span class="line">  publish_date: 6/7/2018 00:00:00</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/ac32f0f4-598c-4f6b-9adc-5717ffc2e951.png" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/ac32f0f4-598c-4f6b-9adc-5717ffc2e951.png"></p>
+<h2 id="侧边栏时钟"><a href="#侧边栏时钟" class="headerlink" title="侧边栏时钟"></a>侧边栏时钟</h2><p>1、安装插件，在博客根目录 <code>[Blogroot]</code> 下打开终端，运行以下指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-butterfly-clock --save</span><br></pre></td></tr></table></figure>
+
+<p>2、添加配置信息，以下为写法示例</p>
+<p>在站点配置文件 <code>_config.yml</code> 或者主题配置文件 <code>_config.butterfly.yml</code> 中添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">electric_clock:</span><br><span class="line">  enable: true</span><br><span class="line">  priority: 5</span><br><span class="line">  enable_page: all</span><br><span class="line">  exclude:</span><br><span class="line"></span><br><span class="line">  layout:</span><br><span class="line">    type: class</span><br><span class="line">    name: sticky_layout</span><br><span class="line">    index: 0</span><br><span class="line">  loading: https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif</span><br><span class="line">  clock_css: https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css</span><br><span class="line">  clock_js: https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js</span><br><span class="line">  ip_api: https://pv.sohu.com/cityjson?ie=utf-8</span><br></pre></td></tr></table></figure>
+
+<h2 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h2><p>要为 Butterfly 配上字数统计特性, 你需要如下几个步骤:</p>
+<ol>
+<li>打开 hexo 工作目录</li>
+<li>npm install hexo-wordcount —save or yarn add hexo-wordcount</li>
+<li>修改主题配置文件 <code>_config.butterfly.yml</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wordcount:</span><br><span class="line">  enable: true</span><br><span class="line">  post_wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  total_wordcount: true</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/558a8d27-84de-4db8-b72a-0873a2d109bc.png" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/558a8d27-84de-4db8-b72a-0873a2d109bc.png"></p>
+<h2 id="公告-2-个小人"><a href="#公告-2-个小人" class="headerlink" title="公告 2 个小人"></a>公告 2 个小人</h2><p>1、在 <code>Butterfly/layout/includes/widget/card_announcement.pug</code> 下添加如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.xpand(style=&#x27;height:200px;&#x27;)</span><br><span class="line">  canvas.illo(width=&#x27;800&#x27; height=&#x27;800&#x27; style=&#x27;max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;&#x27;)</span><br><span class="line">script(src=&#x27;https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js&#x27;)</span><br><span class="line">script(src=&#x27;https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js&#x27;)</span><br><span class="line">script#rendered-js(src=&#x27;https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js&#x27;)</span><br><span class="line">style.</span><br><span class="line">  .card-widget.card-announcement &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  align-items: center;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  text-align: center;</span><br><span class="line">  &#125;</span><br><span class="line">  canvas &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  cursor: move;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="星空背景和流星特效"><a href="#星空背景和流星特效" class="headerlink" title="星空背景和流星特效"></a>星空背景和流星特效</h2><p>1、在 <code>[Blogroot]\themes\source\js\</code> 目录下新建 <code>universe.js</code> 输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function dark() &#123;window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var n,e,i,h,t=.05,s=document.getElementById(&quot;universe&quot;),o=!0,a=&quot;180,184,240&quot;,r=&quot;226,225,142&quot;,d=&quot;226,225,224&quot;,c=[];function f()&#123;n=window.innerWidth,e=window.innerHeight,i=.216*n,s.setAttribute(&quot;width&quot;,n),s.setAttribute(&quot;height&quot;,e)&#125;function u()&#123;h.clearRect(0,0,n,e);for(var t=c.length,i=0;i&lt;t;i++)&#123;var s=c[i];s.move(),s.fadeIn(),s.fadeOut(),s.draw()&#125;&#125;function y()&#123;this.reset=function()&#123;this.giant=m(3),this.comet=!this.giant&amp;&amp;!o&amp;&amp;m(10),this.x=l(0,n-10),this.y=l(0,e),this.r=l(1.1,2.6),this.dx=l(t,6*t)+(this.comet+1-1)*t*l(50,120)+2*t,this.dy=-l(t,6*t)-(this.comet+1-1)*t*l(50,120),this.fadingOut=null,this.fadingIn=!0,this.opacity=0,this.opacityTresh=l(.2,1-.4*(this.comet+1-1)),this.do=l(5e-4,.002)+.001*(this.comet+1-1)&#125;,this.fadeIn=function()&#123;this.fadingIn&amp;&amp;(this.fadingIn=!(this.opacity&gt;this.opacityTresh),this.opacity+=this.do)&#125;,this.fadeOut=function()&#123;this.fadingOut&amp;&amp;(this.fadingOut=!(this.opacity&lt;0),this.opacity-=this.do/2,(this.x&gt;n||this.y&lt;0)&amp;&amp;(this.fadingOut=!1,this.reset()))&#125;,this.draw=function()&#123;if(h.beginPath(),this.giant)h.fillStyle=&quot;rgba(&quot;+a+&quot;,&quot;+this.opacity+&quot;)&quot;,h.arc(this.x,this.y,2,0,2*Math.PI,!1);else if(this.comet)&#123;h.fillStyle=&quot;rgba(&quot;+d+&quot;,&quot;+this.opacity+&quot;)&quot;,h.arc(this.x,this.y,1.5,0,2*Math.PI,!1);for(var t=0;t&lt;30;t++)h.fillStyle=&quot;rgba(&quot;+d+&quot;,&quot;+(this.opacity-this.opacity/20*t)+&quot;)&quot;,h.rect(this.x-this.dx/4*t,this.y-this.dy/4*t-2,2,2),h.fill()&#125;else h.fillStyle=&quot;rgba(&quot;+r+&quot;,&quot;+this.opacity+&quot;)&quot;,h.rect(this.x,this.y,this.r,this.r);h.closePath(),h.fill()&#125;,this.move=function()&#123;this.x+=this.dx,this.y+=this.dy,!1===this.fadingOut&amp;&amp;this.reset(),(this.x&gt;n-n/4||this.y&lt;0)&amp;&amp;(this.fadingOut=!0)&#125;,setTimeout(function()&#123;o=!1&#125;,50)&#125;function m(t)&#123;return Math.floor(1e3*Math.random())+1&lt;10*t&#125;function l(t,i)&#123;return Math.random()*(i-t)+t&#125;f(),window.addEventListener(&quot;resize&quot;,f,!1),function()&#123;h=s.getContext(&quot;2d&quot;);for(var t=0;t&lt;i;t++)c[t]=new y,c[t].reset();u()&#125;(),function t()&#123;document.getElementsByTagName(&#x27;html&#x27;)[0].getAttribute(&#x27;data-theme&#x27;)==&#x27;dark&#x27;&amp;&amp;u(),window.requestAnimationFrame(t)&#125;()&#125;;</span><br><span class="line">dark()</span><br></pre></td></tr></table></figure>
+
+<p>2、在 <code>[Blogroot]\themes\source\css\</code> 目录下新建 <code>universe.css</code> 输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#universe&#123;</span><br><span class="line">  display: block;</span><br><span class="line">  position: fixed;</span><br><span class="line">  margin: 0;</span><br><span class="line">  padding: 0;</span><br><span class="line">  border: 0;</span><br><span class="line">  outline: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  top: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  pointer-events: none;</span><br><span class="line">  z-index: -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、在 <code>[Blogroot]\_config.butterfly.yml</code> 的 <code>inject</code> 配置项中 <code>bottom</code> 下填入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">inject:</span><br><span class="line">  bottom:</span><br><span class="line">+       # 星空背景</span><br><span class="line">+    - &lt;canvas&gt;&lt;/canvas&gt;</span><br><span class="line">+    - &lt;script defer src=&quot;/js/universe.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>4、在 <code>[Blogroot]\_config.butterfly.yml</code> 的 <code>inject</code> 配置项中 <code>head</code> 下填入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inject:</span><br><span class="line">  head:</span><br><span class="line">+    ## 星空背景</span><br><span class="line">+    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/universe.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="昼夜转换动画"><a href="#昼夜转换动画" class="headerlink" title="昼夜转换动画"></a>昼夜转换动画</h2><p>1、新建 [Blogroot]_moon.pug, 这部分其实实质上就是一个 svg 文件，通过 js 操作它的旋转显隐，淡入淡出实现动画效果。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">svg(aria-hidden=&#x27;true&#x27;, style=&#x27;position:absolute; overflow:hidden; width:0; height:0&#x27;)</span><br><span class="line">  symbol#icon-sun(viewBox=&#x27;0 0 1024 1024&#x27;)</span><br><span class="line">    path(d=&#x27;M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z&#x27;, fill=&#x27;#FFD878&#x27;, p-id=&#x27;8420&#x27;)</span><br><span class="line">    path(d=&#x27;M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z&#x27;, fill=&#x27;#FFE4A9&#x27;, p-id=&#x27;8421&#x27;)</span><br><span class="line">    path(d=&#x27;M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z&#x27;, fill=&#x27;#4D5152&#x27;, p-id=&#x27;8422&#x27;)</span><br><span class="line">    path(d=&#x27;M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z&#x27;, fill=&#x27;#4D5152&#x27;, p-id=&#x27;8423&#x27;)</span><br><span class="line">  symbol#icon-moon(viewBox=&#x27;0 0 1024 1024&#x27;)</span><br><span class="line">    path(d=&#x27;M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z&#x27;, fill=&#x27;#FFB531&#x27;, p-id=&#x27;11345&#x27;)</span><br><span class="line">    path(d=&#x27;M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z&#x27;, fill=&#x27;#030835&#x27;, p-id=&#x27;11346&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>2、新建 [Blogroot]_moon.styl：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">.Cuteen_DarkSky,</span><br><span class="line">.Cuteen_DarkSky:before</span><br><span class="line">  content &#x27;&#x27;</span><br><span class="line">  position fixed</span><br><span class="line">  left 0</span><br><span class="line">  right 0</span><br><span class="line">  top 0</span><br><span class="line">  bottom 0</span><br><span class="line">  z-index 88888888</span><br><span class="line"></span><br><span class="line">.Cuteen_DarkSky</span><br><span class="line">  background linear-gradient(#feb8b0, #fef9db)</span><br><span class="line">  &amp;:before</span><br><span class="line">    transition 2s ease all</span><br><span class="line">    opacity 0</span><br><span class="line">    background linear-gradient(#4c3f6d, #6c62bb, #93b1ed)</span><br><span class="line"></span><br><span class="line">.DarkMode</span><br><span class="line">  .Cuteen_DarkSky</span><br><span class="line">    &amp;:before</span><br><span class="line">      opacity 1</span><br><span class="line"></span><br><span class="line">.Cuteen_DarkPlanet</span><br><span class="line">  z-index 99999999</span><br><span class="line">  position fixed</span><br><span class="line">  left -50%</span><br><span class="line">  top -50%</span><br><span class="line">  width 200%</span><br><span class="line">  height 200%</span><br><span class="line">  -webkit-animation CuteenPlanetMove 2s cubic-bezier(0.7, 0, 0, 1)</span><br><span class="line">  animation CuteenPlanetMove 2s cubic-bezier(0.7, 0, 0, 1)</span><br><span class="line">  transform-origin center bottom</span><br><span class="line"></span><br><span class="line">@-webkit-keyframes CuteenPlanetMove &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    transform: rotate(0);</span><br><span class="line">  &#125;</span><br><span class="line">  to &#123;</span><br><span class="line">    transform: rotate(360deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes CuteenPlanetMove &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    transform: rotate(0);</span><br><span class="line">  &#125;</span><br><span class="line">  to &#123;</span><br><span class="line">    transform: rotate(360deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.Cuteen_DarkPlanet</span><br><span class="line">  &amp;:after</span><br><span class="line">    position absolute</span><br><span class="line">    left 35%</span><br><span class="line">    top 40%</span><br><span class="line">    width 9.375rem</span><br><span class="line">    height 9.375rem</span><br><span class="line">    border-radius 50%</span><br><span class="line">    content &#x27;&#x27;</span><br><span class="line">    background linear-gradient(#fefefe, #fffbe8)</span><br><span class="line"></span><br><span class="line">.search</span><br><span class="line">  span</span><br><span class="line">    display none</span><br><span class="line"></span><br><span class="line">.menus_item</span><br><span class="line">  a</span><br><span class="line">    text-decoration none!important</span><br><span class="line"></span><br><span class="line">.icon-V</span><br><span class="line">  padding 5px</span><br></pre></td></tr></table></figure>
+
+<p>3、新建 [Blogroot]_moon.js, 去除了冗余代码，去 jquery：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function switchNightMode() &#123;</span><br><span class="line">  document.querySelector(&#x27;body&#x27;).insertAdjacentHTML(&#x27;beforeend&#x27;, &#x27;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&#x27;),</span><br><span class="line">    setTimeout(function() &#123;</span><br><span class="line">      document.querySelector(&#x27;body&#x27;).classList.contains(&#x27;DarkMode&#x27;) ? (document.querySelector(&#x27;body&#x27;).classList.remove(&#x27;DarkMode&#x27;), localStorage.setItem(&#x27;isDark&#x27;, &#x27;0&#x27;), document.getElementById(&#x27;modeicon&#x27;).setAttribute(&#x27;xlink:href&#x27;, &#x27;#icon-moon&#x27;)) : (document.querySelector(&#x27;body&#x27;).classList.add(&#x27;DarkMode&#x27;), localStorage.setItem(&#x27;isDark&#x27;, &#x27;1&#x27;), document.getElementById(&#x27;modeicon&#x27;).setAttribute(&#x27;xlink:href&#x27;, &#x27;#icon-sun&#x27;)),</span><br><span class="line">        setTimeout(function() &#123;</span><br><span class="line">          document.getElementsByClassName(&#x27;Cuteen_DarkSky&#x27;)[0].style.transition = &#x27;opacity 3s&#x27;;</span><br><span class="line">          document.getElementsByClassName(&#x27;Cuteen_DarkSky&#x27;)[0].style.opacity = &#x27;0&#x27;;</span><br><span class="line">          setTimeout(function() &#123;</span><br><span class="line">            document.getElementsByClassName(&#x27;Cuteen_DarkSky&#x27;)[0].remove();</span><br><span class="line">          &#125;, 1e3);</span><br><span class="line">        &#125;, 2e3)</span><br><span class="line">    &#125;)</span><br><span class="line">  const nowMode = document.documentElement.getAttribute(&#x27;data-theme&#x27;) === &#x27;dark&#x27; ? &#x27;dark&#x27; : &#x27;light&#x27;</span><br><span class="line">  if (nowMode === &#x27;light&#x27;) &#123;</span><br><span class="line">    activateDarkMode()</span><br><span class="line">    saveToLocal.set(&#x27;theme&#x27;, &#x27;dark&#x27;, 2)</span><br><span class="line">    GLOBAL_CONFIG.Snackbar !== undefined &amp;&amp; btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)</span><br><span class="line">    document.getElementById(&#x27;modeicon&#x27;).setAttribute(&#x27;xlink:href&#x27;, &#x27;#icon-sun&#x27;)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    activateLightMode()</span><br><span class="line">    saveToLocal.set(&#x27;theme&#x27;, &#x27;light&#x27;, 2)</span><br><span class="line">    document.querySelector(&#x27;body&#x27;).classList.add(&#x27;DarkMode&#x27;), document.getElementById(&#x27;modeicon&#x27;).setAttribute(&#x27;xlink:href&#x27;, &#x27;#icon-moon&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  typeof utterancesTheme === &#x27;function&#x27; &amp;&amp; utterancesTheme()</span><br><span class="line">  typeof FB === &#x27;object&#x27; &amp;&amp; window.loadFBComment()</span><br><span class="line">  window.DISQUS &amp;&amp; document.getElementById(&#x27;disqus_thread&#x27;).children.length &amp;&amp; setTimeout(() =&gt; window.disqusReset(), 200)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、修改 [Blogroot].pug, 在文件末位加上一行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//- global config</span><br><span class="line">!=partial(&#x27;includes/head/config&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line"></span><br><span class="line">include ./head/config_site.pug</span><br><span class="line">include ./head/noscript.pug</span><br><span class="line"></span><br><span class="line">!=fragment_cache(&#x27;injectHeadJs&#x27;, function()&#123;return inject_head_js()&#125;)</span><br><span class="line"></span><br><span class="line">!=fragment_cache(&#x27;injectHead&#x27;, function()&#123;return injectHtml(theme.inject.head)&#125;)</span><br><span class="line">+ include ./custom/sun_moon.pug</span><br></pre></td></tr></table></figure>
+
+<p>5、修改 [Blogroot].pug, 把原本的昼夜切换按钮替换掉：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">when &#x27;translate&#x27;</span><br><span class="line">  if translate.enable</span><br><span class="line">    button#translateLink(type=&quot;button&quot; title=_p(&#x27;rightside.translate_title&#x27;))= translate.default</span><br><span class="line">when &#x27;darkmode&#x27;</span><br><span class="line">  if darkmode.enable &amp;&amp; darkmode.button</span><br><span class="line">-     button#darkmode(type=&quot;button&quot; title=_p(&#x27;rightside.night_mode_title&#x27;))</span><br><span class="line">-       i.fas.fa-adjust</span><br><span class="line">+     a.icon-V.hidden(onclick=&#x27;switchNightMode()&#x27;,  title=_p(&#x27;rightside.night_mode_title&#x27;))</span><br><span class="line">+       svg(width=&#x27;25&#x27;, height=&#x27;25&#x27;, viewBox=&#x27;0 0 1024 1024&#x27;)</span><br><span class="line">+         use#modeicon(xlink:href=&#x27;#icon-moon&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>6、修改 [Blogroot]_config.butterfly.yml, 引入一下 js：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inject:</span><br><span class="line">  head:</span><br><span class="line">  bottome:</span><br><span class="line">    - &lt;script src=&quot;/js/sun_moon.js&quot; async&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>7、具体效果就自己切换下夜间模式看看吧。</p>
+<h2 id="引入-Aplayer-播放音乐"><a href="#引入-Aplayer-播放音乐" class="headerlink" title="引入 Aplayer 播放音乐"></a>引入 Aplayer 播放音乐</h2><p>1、在博客根目录 <code>[Blogroot]</code> 下打开终端，运行以下指令安装 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-tag-aplayer">hexo-tag-aplayer</a> 插件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-tag-aplayer --save</span><br></pre></td></tr></table></figure>
+
+<p>2、在站点配置文件 <code>[Blogroot]\_config.yml</code> 中新增配置项，建议直接加在最底下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aplayer:</span><br><span class="line">  meting: true</span><br><span class="line">  asset_inject: false</span><br></pre></td></tr></table></figure>
+
+<p>3、修改主题配置文件 <code>[Blogroot]\_config.butterfly.yml</code> 中关于 Aplayer 的配置内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aplayerInject:</span><br><span class="line">  enable: true</span><br><span class="line">  per_page: true</span><br></pre></td></tr></table></figure>
+
+<p>4、在主题配置文件 <code>[Blogroot]\_config.butterfly.yml</code> 的 inject 配置项中添加 Aplayer 的容器。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inject:</span><br><span class="line">  head:</span><br><span class="line">  bottom:</span><br><span class="line">    - &lt;div data-id=&quot;5183531430&quot; data-server=&quot;netease&quot; data-type=&quot;playlist&quot; data-fixed=&quot;true&quot; data-mini=&quot;true&quot; data-listFolded=&quot;false&quot; data-order=&quot;random&quot; data-preload=&quot;none&quot; data-autoplay=&quot;false&quot; muted&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>5、在博客根目录 <code>[Blogroot]</code> 下打开终端，运行以下指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>6、关于更换歌单的问题，大部分同学都因为只更改了 data-id 的值，所以出现歌单加载不出的情况，此处需要注意，<strong>data-id</strong>、<strong>data-server</strong>、<strong>data-type</strong> 分别对应了<code>歌单的id，歌单的服务商、歌单的类型</code>（感觉自己说了废话），所以需要确认这三项是一一对应的。</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-15_13-19-41.png" alt="Xnip2022-10-15_13-19-41.png"></p>
+<p>如图中所示，找到qq音乐歌单的 url，<code>https://music.163.com/#/playlist?id=4907060762</code>, 此处的 <strong>palylist</strong> 对应的就是 <strong>data-type</strong> 的值，<strong>id</strong> 就是 <strong>data-id</strong> 的值，而QQ音乐的 <strong>data-server</strong> 为 <strong>tencent</strong>，这个可以通过 Aplayer 的插件文档查阅到。 只有三个参数对应正确才能正常加载歌单。</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-15_13-29-48.png" alt="Xnip2022-10-15_13-29-48.png"></p>
+<p>7、Aplayer 的QQ音乐歌单接口时不时的会挂掉，所以如果你确定你配置正确，但是歌单还是没有出现。不妨去看看其他人的站点是不是也没有 Aplayer 标签了来判断是 Aplayer 本身接口的问题还是自己配置出错的问题。</p>
+<p>8、配置成功后会发现 Aplayer 的吸底标签一直占据着左下角的一片空间，对手机端阅读不太友好，可以添加一下 CSS 样式使其自动缩进隐藏。在 <code>[Blogroot]\themes\butterfly\source\css\custom.css</code> 中 (没有这个文件就按照路径自己新建) 添加如下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body &#123;</span><br><span class="line">  left: -66px !important;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover &#123;</span><br><span class="line">  left: 0 !important;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>9、不要忘了到主题配置文件引入自定义样式，修改 <code>[Blogroot]_config.butterfly.yml</code> 的 <code>inject</code> 配置项：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">inject:</span><br><span class="line">    head:</span><br><span class="line">+     - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/custom.css&quot;  media=&quot;defer&quot; onload=&quot;this.media=&#x27;all&#x27;&quot;&gt;</span><br><span class="line">    bottom:</span><br><span class="line">      - &lt;div data-id=&quot;5183531430&quot; data-server=&quot;netease&quot; data-type=&quot;playlist&quot; data-fixed=&quot;true&quot; data-mini=&quot;true&quot; data-listFolded=&quot;false&quot; data-order=&quot;random&quot; data-preload=&quot;none&quot; data-autoplay=&quot;false&quot; muted&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-15_13-32-54.png" alt="Xnip2022-10-15_13-32-54.png"></p>
+<h1 id="宠物模型"><a href="#宠物模型" class="headerlink" title="宠物模型"></a><strong><strong>宠物模型</strong></strong></h1><p>宠物模型预览：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wang_123_zy/article/details/87181892">https://blog.csdn.net/wang_123_zy&#x2F;article&#x2F;details&#x2F;87181892</a></p>
+<h2 id="首先贴出官网代码"><a href="#首先贴出官网代码" class="headerlink" title="首先贴出官网代码"></a>首先贴出官网代码</h2><p>官网地址配置：<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-helper-live2d">https://www.npmjs.com/package/hexo-helper-live2d</a></p>
+<h2 id="按如下步骤执行"><a href="#按如下步骤执行" class="headerlink" title="按如下步骤执行"></a>按如下步骤执行</h2><p>1️⃣ 首先检查博客主目录下面的 <code>package.json</code>里是否有<code>&quot;hexo-helper-live2d&quot;: &quot;^3.0.3&quot;,</code>依赖，有的话可以先卸载<br>使用命令：<code>npm uninstall hexo-helper-live2d</code><br>之后再安装：<code>npm install --save hexo-helper-live2d</code><strong>注意：</strong>命令都是在你的博客主目录执行</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/2c0cf8bd-c5b9-4861-b282-2f1c9c13a658.png" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/2c0cf8bd-c5b9-4861-b282-2f1c9c13a658.png"></p>
+<p>我的博客目录结构：d:&#x2F;github&#x2F;blog</p>
+<p>安装完成之后在</p>
+<p><code>package.json</code></p>
+<p>会看到安装的 model</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/0a42c28c-9b68-475a-ac40-f7d200d467b5.png" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/0a42c28c-9b68-475a-ac40-f7d200d467b5.png"></p>
+<p>package.json 依赖</p>
+<p>此时再去博客根目录<code>node_moduels</code>目录下，可以看到有如下文件夹，这些都是动画主配置</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/c8485d69-9737-43f7-8cc2-479e2a66582b.png" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/c8485d69-9737-43f7-8cc2-479e2a66582b.png"></p>
+<p>node_modules 目录</p>
+<p>2️⃣下载各种动画 model：</p>
+<p>地址：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget-models.git">https://github.com/xiazeyu/live2d-widget-models.git</a></p>
+<h3 id="Install-seperated-models-（Mac系统下载方法）"><a href="#Install-seperated-models-（Mac系统下载方法）" class="headerlink" title="Install seperated models （Mac系统下载方法）"></a><strong>Install seperated models （Mac系统下载方法）</strong></h3><p>use <code>npm install &#123;packagename&#125;</code> The package name is the folder name in <code>packages/</code> We have:</p>
+<ul>
+<li><code>live2d-widget-model-chitose</code></li>
+<li><code>live2d-widget-model-epsilon2_1</code></li>
+<li><code>live2d-widget-model-gf</code></li>
+<li><code>live2d-widget-model-haru/01</code> (use <code>npm install --save live2d-widget-model-haru</code>)</li>
+<li><code>live2d-widget-model-haru/02</code> (use <code>npm install --save live2d-widget-model-haru</code>)</li>
+<li><code>live2d-widget-model-haruto</code></li>
+<li><code>live2d-widget-model-hibiki</code></li>
+<li><code>live2d-widget-model-hijiki</code></li>
+<li><code>live2d-widget-model-izumi</code></li>
+<li><code>live2d-widget-model-koharu</code></li>
+<li><code>live2d-widget-model-miku</code></li>
+<li><code>live2d-widget-model-ni-j</code></li>
+<li><code>live2d-widget-model-nico</code></li>
+<li><code>live2d-widget-model-nietzsche</code></li>
+<li><code>live2d-widget-model-nipsilon</code></li>
+<li><code>live2d-widget-model-nito</code></li>
+<li><code>live2d-widget-model-shizuku</code></li>
+<li><code>live2d-widget-model-tororo</code></li>
+<li><code>live2d-widget-model-tsumiki</code></li>
+<li><code>live2d-widget-model-unitychan</code></li>
+<li><code>live2d-widget-model-wanko</code></li>
+<li><code>live2d-widget-model-z16</code></li>
+</ul>
+<p>3️⃣下载好之后将 packages 里的所有动画模板拷贝到博客的 node_modules 目录里（Mac系统忽略此步骤）</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/65a4c7a4-c7c0-4e00-8bed-56e639eb40bd.png" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/65a4c7a4-c7c0-4e00-8bed-56e639eb40bd.png"></p>
+<p>4️⃣配置博客站点配置文件，_config.yml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-haruto  #模板目录，在node_modules里</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: false  #是否在手机进行显示</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>5️⃣开始部署<br>当使用<code>hexo clean</code>或者 <code>hexo g</code>命令的时候，这时候就可以看到如下日志了</p>
+<p><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/febd597c-2453-4711-8728-2d2875d7591b.png" alt="%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3(%E4%B8%80)%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96%20a0f7ef2ad4884998bf0fa65c9e7c5e4e/febd597c-2453-4711-8728-2d2875d7591b.png"></p>
+<p>构建日志</p>
+<p><code>INFO HEXO-HELPER-LIVE2D: Loaded model from npm-module(1), live2d-widget-model-epsilon2_1@1.0.5 from &#39;D:\github\blog\node_modules\live2d-widget-model-epsilon2_1\assets&#39;</code></p>
+<p>说明已经加载到了配置的动画模板，到此就完成了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://gejianya.github.io">gejianya</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://gejianya.github.io/post/7778423a.html">https://gejianya.github.io/post/7778423a.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://gejianya.github.io" target="_blank">我是电商产品经理</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo</a><a class="post-meta__tags" href="/tags/github/">github</a><a class="post-meta__tags" href="/tags/%E4%B8%BB%E9%A2%98/">主题</a><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%AB%99%E8%AE%BE%E7%BD%AE/">网站设置</a><a class="post-meta__tags" href="/tags/%E7%BE%8E%E5%8C%96/">美化</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/gejianya/img-picgo/master/a5c913c0-62e0-46f9-8fd1-377f2d0011b0.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信支付"/></a><div class="post-qr-code-desc">微信支付</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝支付"/></a><div class="post-qr-code-desc">支付宝支付</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/d95d7e09.html"><img class="next-cover" src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-16_02-39-52.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/d95d7e09.html" title="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法"><img class="cover" src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-16_02-39-52.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-16</div><div class="title">Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">gejianya</div><div class="author-info__description">成为国内顶成功的电商产品专家</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://www.zhihu.com/people/xiao-ya-47-25"><i class="fa-brands fa-zhihu"></i><span>人生思考</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/img/weixin_me.JPG" target="_blank" title=""><i class="fa-brands fa-weixin"></i></a><a class="social-icon" href="https://weibo.com/u/2531893640" target="_blank" title=""><i class="fa-brands fa-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/8533657?spm_id_from=333.1007.0.0" target="_blank" title=""><i class="fa-brands fa-bilibili"></i></a><a class="social-icon" href="mailto:gejianya@139.com" target="_blank" title=""><i class="fa-solid fa-envelope"></i></a></div></div><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}</style><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E6%96%87%E6%A1%A3-%E4%B8%80-%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%E3%80%81%E7%BD%91%E9%A1%B5%E7%BE%8E%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">网站建设文档(一)上传服务器、网页编辑、网页美化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Butterfly-%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">Butterfly 主题安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">GitHub安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gitee%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">Gitee安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NPM%E5%AE%89%E8%A3%85"><span class="toc-number">2.3.</span> <span class="toc-text">NPM安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E4%B8%BB%E9%A2%98"><span class="toc-number">2.4.</span> <span class="toc-text">应用主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">2.5.</span> <span class="toc-text">安装插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%87%E7%BA%A7%E5%BB%BA%E8%AE%AE"><span class="toc-number">2.6.</span> <span class="toc-text">升级建议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5GitHub%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="toc-number">2.6.1.</span> <span class="toc-text">连接GitHub失败问题解决</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Butterfly-%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">Butterfly 主题美化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%94%AF%E4%B8%80%E9%93%BE%E6%8E%A5"><span class="toc-number">3.1.</span> <span class="toc-text">生成文章唯一链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%A0%B7%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">代码样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E4%B8%BB%E9%A2%98"><span class="toc-number">3.2.1.</span> <span class="toc-text">代码高亮主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%88%B6"><span class="toc-number">3.2.2.</span> <span class="toc-text">代码复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%AB%98%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-number">3.2.3.</span> <span class="toc-text">代码高度限制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B6%E9%83%A8%E5%9B%BE"><span class="toc-number">3.3.</span> <span class="toc-text">顶部图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%AD%97%E6%95%88%E6%9E%9C"><span class="toc-number">3.4.</span> <span class="toc-text">打字效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%89%B9%E6%95%88"><span class="toc-number">3.5.</span> <span class="toc-text">背景特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C"><span class="toc-number">3.6.</span> <span class="toc-text">鼠标点击效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%89%AF%E6%A0%87%E9%A2%98"><span class="toc-number">3.7.</span> <span class="toc-text">网站副标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.8.</span> <span class="toc-text">侧边栏设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%A7%E8%BE%B9%E6%8E%92%E7%89%88"><span class="toc-number">3.8.1.</span> <span class="toc-text">侧边排版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0-busuanzi-UV-%E5%92%8C-PV"><span class="toc-number">3.8.2.</span> <span class="toc-text">访问人数 busuanzi (UV 和 PV)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="toc-number">3.8.3.</span> <span class="toc-text">运行时间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%97%B6%E9%92%9F"><span class="toc-number">3.9.</span> <span class="toc-text">侧边栏时钟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1"><span class="toc-number">3.10.</span> <span class="toc-text">字数统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E5%91%8A-2-%E4%B8%AA%E5%B0%8F%E4%BA%BA"><span class="toc-number">3.11.</span> <span class="toc-text">公告 2 个小人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%9F%E7%A9%BA%E8%83%8C%E6%99%AF%E5%92%8C%E6%B5%81%E6%98%9F%E7%89%B9%E6%95%88"><span class="toc-number">3.12.</span> <span class="toc-text">星空背景和流星特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BC%E5%A4%9C%E8%BD%AC%E6%8D%A2%E5%8A%A8%E7%94%BB"><span class="toc-number">3.13.</span> <span class="toc-text">昼夜转换动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%85%A5-Aplayer-%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90"><span class="toc-number">3.14.</span> <span class="toc-text">引入 Aplayer 播放音乐</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%A0%E7%89%A9%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">宠物模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E8%B4%B4%E5%87%BA%E5%AE%98%E7%BD%91%E4%BB%A3%E7%A0%81"><span class="toc-number">4.1.</span> <span class="toc-text">首先贴出官网代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E5%A6%82%E4%B8%8B%E6%AD%A5%E9%AA%A4%E6%89%A7%E8%A1%8C"><span class="toc-number">4.2.</span> <span class="toc-text">按如下步骤执行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-seperated-models-%EF%BC%88Mac%E7%B3%BB%E7%BB%9F%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%B3%95%EF%BC%89"><span class="toc-number">4.2.1.</span> <span class="toc-text">Install seperated models （Mac系统下载方法）</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/7778423a.html" title="网站建设文档(一)上传服务器、网页编辑、网页美化"><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/a5c913c0-62e0-46f9-8fd1-377f2d0011b0.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网站建设文档(一)上传服务器、网页编辑、网页美化"/></a><div class="content"><a class="title" href="/post/7778423a.html" title="网站建设文档(一)上传服务器、网页编辑、网页美化">网站建设文档(一)上传服务器、网页编辑、网页美化</a><time datetime="2022-10-16T03:40:29.000Z" title="发表于 2022-10-16 11:40:29">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/d95d7e09.html" title="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法"><img src="https://raw.githubusercontent.com/gejianya/img-picgo/master/Xnip2022-10-16_02-39-52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法"/></a><div class="content"><a class="title" href="/post/d95d7e09.html" title="Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法">Hexo + 阿里云 &amp; GitHub 搭建个人博客 | Mac和Windows系统安装方法</a><time datetime="2022-10-15T16:26:59.000Z" title="发表于 2022-10-16 00:26:59">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/4a17b156.html" title="Hello World"><img src="/linear-gradient(20deg,%20#0062be,%20#925696,%20#cc426e,%20#fb0347)" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/post/4a17b156.html" title="Hello World">Hello World</a><time datetime="2022-10-13T18:09:57.331Z" title="发表于 2022-10-14 02:09:57">2022-10-14</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s1.ax1x.com/2022/10/15/x0roge.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By gejianya</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '1q63YMM2rXIOJ8ukOcBQRpPX-gzGzoHsz',
+      appKey: 'xdDbBxmnNcEKrhiDSGZ5pSsR',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><div class="aplayer no-destroy" data-id="7040959775" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
